@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             comboBoxFileName = new ComboBox();
-            buttonPrintMassage = new Button();
+            buttonReadFile = new Button();
             errorProviderFile = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)errorProviderFile).BeginInit();
             SuspendLayout();
@@ -45,15 +45,15 @@
             comboBoxFileName.Size = new Size(121, 23);
             comboBoxFileName.TabIndex = 0;
             // 
-            // buttonPrintMassage
+            // buttonReadFile
             // 
-            buttonPrintMassage.Location = new Point(139, 39);
-            buttonPrintMassage.Name = "buttonPrintMassage";
-            buttonPrintMassage.Size = new Size(131, 74);
-            buttonPrintMassage.TabIndex = 1;
-            buttonPrintMassage.Text = "Прочитать";
-            buttonPrintMassage.UseVisualStyleBackColor = true;
-            buttonPrintMassage.Click += buttonPrintMassage_Click;
+            buttonReadFile.Location = new Point(160, 39);
+            buttonReadFile.Name = "buttonReadFile";
+            buttonReadFile.Size = new Size(131, 74);
+            buttonReadFile.TabIndex = 1;
+            buttonReadFile.Text = "Прочитать";
+            buttonReadFile.UseVisualStyleBackColor = true;
+            buttonReadFile.Click += buttonPrintMassage_Click;
             // 
             // errorProviderFile
             // 
@@ -63,8 +63,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(282, 231);
-            Controls.Add(buttonPrintMassage);
+            ClientSize = new Size(313, 231);
+            Controls.Add(buttonReadFile);
             Controls.Add(comboBoxFileName);
             Name = "FileForm";
             Text = "FileForm";
@@ -75,7 +75,7 @@
         #endregion
 
         private ComboBox comboBoxFileName;
-        private Button buttonPrintMassage;
+        private Button buttonReadFile;
         private ErrorProvider errorProviderFile;
     }
 }
