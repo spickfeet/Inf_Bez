@@ -31,10 +31,21 @@ namespace Inf_Bez
 
         private void buttonPrintMassage_Click(object sender, EventArgs e)
         {
+            if (comboBoxFileName.SelectedIndex == -1)
+            {
+                errorProviderFile.SetError(comboBoxFileName, "Выбtрите файл");
+                return;
+            }
             var massage = JsonConvert.DeserializeObject<MassageAndID>(File.ReadAllText(comboBoxFileName.Text));
             if (_user.Id.Contains(massage.ID))
             {
-                labelMassage.Text = massage.Massage;
+                errorProviderFile.Clear();
+                MassageForm massageForm = new MassageForm(massage.Massage);
+                massageForm.ShowDialog();
+            }
+            else
+            {
+                errorProviderFile.SetError(comboBoxFileName, "Увас нет доступа к этому файлу");
             }
         }
     }

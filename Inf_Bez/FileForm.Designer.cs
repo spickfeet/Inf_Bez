@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             comboBoxFileName = new ComboBox();
             buttonPrintMassage = new Button();
-            labelMassage = new Label();
+            errorProviderFile = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProviderFile).BeginInit();
             SuspendLayout();
             // 
             // comboBoxFileName
@@ -38,49 +40,42 @@
             comboBoxFileName.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxFileName.FormattingEnabled = true;
             comboBoxFileName.Items.AddRange(new object[] { "Anime.json", "Films.json", "Games.json", "Books.json" });
-            comboBoxFileName.Location = new Point(210, 161);
+            comboBoxFileName.Location = new Point(12, 39);
             comboBoxFileName.Name = "comboBoxFileName";
             comboBoxFileName.Size = new Size(121, 23);
             comboBoxFileName.TabIndex = 0;
             // 
             // buttonPrintMassage
             // 
-            buttonPrintMassage.Location = new Point(483, 161);
+            buttonPrintMassage.Location = new Point(139, 39);
             buttonPrintMassage.Name = "buttonPrintMassage";
-            buttonPrintMassage.Size = new Size(75, 23);
+            buttonPrintMassage.Size = new Size(131, 74);
             buttonPrintMassage.TabIndex = 1;
-            buttonPrintMassage.Text = "button1";
+            buttonPrintMassage.Text = "Прочитать";
             buttonPrintMassage.UseVisualStyleBackColor = true;
             buttonPrintMassage.Click += buttonPrintMassage_Click;
             // 
-            // labelMassage
+            // errorProviderFile
             // 
-            labelMassage.AutoSize = true;
-            labelMassage.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMassage.Location = new Point(95, 240);
-            labelMassage.Name = "labelMassage";
-            labelMassage.Size = new Size(63, 25);
-            labelMassage.TabIndex = 2;
-            labelMassage.Text = "label1";
+            errorProviderFile.ContainerControl = this;
             // 
             // FileForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(labelMassage);
+            ClientSize = new Size(282, 231);
             Controls.Add(buttonPrintMassage);
             Controls.Add(comboBoxFileName);
             Name = "FileForm";
             Text = "FileForm";
+            ((System.ComponentModel.ISupportInitialize)errorProviderFile).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private ComboBox comboBoxFileName;
         private Button buttonPrintMassage;
-        private Label labelMassage;
+        private ErrorProvider errorProviderFile;
     }
 }
