@@ -17,6 +17,7 @@ namespace Inf_Bez
         private User _user;
         public FileForm(Form prev, User user)
         {
+
             _prevForm = prev;
             _prevForm.Hide();
             _user = user;
