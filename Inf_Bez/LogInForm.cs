@@ -14,7 +14,12 @@ namespace Inf_Bez
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
             labelError.Visible = false;
-            var users = File.Exists("Users.json") ? JsonConvert.DeserializeObject<List<User>>(File.ReadAllText("Users.json")) : throw new Exception("Users.json не найден");
+            var users = File.Exists("Users.json")
+                ? JsonConvert.DeserializeObject<List<User>>(File.ReadAllText("Users.json"))
+                : throw new Exception("Users.json не найден");
+
+            if (users == null) throw new Exception("Не удалось считать файл");
+
             foreach (var user in users)
             {
                 if (user.Login == textBoxLogin.Text && user.Password == textBoxPassword.Text)
@@ -37,6 +42,12 @@ namespace Inf_Bez
             {
                 textBoxPassword.UseSystemPasswordChar = true;
             }
+        }
+
+        private void labelSignUp_Click(object sender, EventArgs e)
+        {
+            SignUpForm signUpForm = new SignUpForm();
+            signUpForm.ShowDialog();
         }
     }
 }
