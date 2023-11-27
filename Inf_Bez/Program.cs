@@ -10,19 +10,19 @@ namespace Inf_Bez
         [STAThread]
         static void Main()
         {
-            if (!File.Exists("Users.json"))
-            {
+            //User spickfeet = new("Kuga", "123", new HashSet<int> { 1, 2, 3 });
+            //User timZR = new("TimZR", "321", new HashSet<int> { 2 });
+            //User blinchik = new("Blinchik", "111", new HashSet<int> { 3 });
 
-                User spickfeet = new("Kuga", "123", 19871);
-                User timZR = new("TimZR", "321", 19872);
-                User blinchik = new("Blinchik", "111", 19873);
+            //List<User> users = new List<User>
+            //{
+            //    spickfeet,
+            //    timZR,
+            //    blinchik
+            //};
 
-                List<User> users = new List<User>();
-                users.Add(spickfeet);
-                users.Add(timZR);
+            //File.WriteAllText("Users.json", JsonConvert.SerializeObject(users));
 
-                File.WriteAllText("Users.json", JsonConvert.SerializeObject(users));
-            }
 
             ApplicationConfiguration.Initialize();
             Application.Run(new LogInForm());
