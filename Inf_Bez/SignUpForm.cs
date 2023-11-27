@@ -5,21 +5,28 @@ namespace Inf_Bez
 {
     public partial class SignUpForm : Form
     {
-        public SignUpForm()
+        private Form _prevForm;
+        public SignUpForm(Form prev)
         {
+            _prevForm = prev;
+            _prevForm.Hide();
+            FormClosed += OnClosed;
             InitializeComponent();
             labelError.Visible = false;
             textBoxPassword.UseSystemPasswordChar = true;
         }
-
+        private void OnClosed(object? sender, FormClosedEventArgs e)
+        {
+            _prevForm.Visible = true;
+        }
         private void buttonSignUp_Click(object sender, EventArgs e)
         {
             labelError.Visible = false;
 
             User userForRegistration = new User(textBoxLogin.Text, textBoxPassword.Text, GetId());
-            var usersData = File.Exists("Users.json") 
-                ? JsonConvert.DeserializeObject<List<User>>(File.ReadAllText("Users.json")) 
-                : throw new Exception("Users.json не найден");
+            var usersData = File.Exists("Users.json")
+                ? JsonConvert.DeserializeObject<List<User>>(File.ReadAllText("Users.json"))
+                : null;
 
             if (usersData != null)
             {

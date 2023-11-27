@@ -24,7 +24,7 @@ namespace Inf_Bez
             {
                 if (user.Login == textBoxLogin.Text && user.Password == textBoxPassword.Text)
                 {
-                    FileForm fileForm = new FileForm(this);
+                    FileForm fileForm = new FileForm(this, user);
                     fileForm.ShowDialog();
                     return;
                 }
@@ -46,7 +46,7 @@ namespace Inf_Bez
 
         private void labelSignUp_Click(object sender, EventArgs e)
         {
-            SignUpForm signUpForm = new SignUpForm();
+            SignUpForm signUpForm = new SignUpForm(this);
             signUpForm.ShowDialog();
         }
     }

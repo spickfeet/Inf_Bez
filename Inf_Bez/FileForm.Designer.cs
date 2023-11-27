@@ -28,12 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FileForm";
+            comboBoxFileName = new ComboBox();
+            buttonPrintMassage = new Button();
+            labelMassage = new Label();
+            SuspendLayout();
+            // 
+            // comboBoxFileName
+            // 
+            comboBoxFileName.FormattingEnabled = true;
+            comboBoxFileName.Items.AddRange(new object[] { "Anime.json", "Films.json", "Games.json", "Books.json" });
+            comboBoxFileName.Location = new Point(210, 161);
+            comboBoxFileName.Name = "comboBoxFileName";
+            comboBoxFileName.Size = new Size(121, 23);
+            comboBoxFileName.TabIndex = 0;
+            // 
+            // buttonPrintMassage
+            // 
+            buttonPrintMassage.Location = new Point(483, 161);
+            buttonPrintMassage.Name = "buttonPrintMassage";
+            buttonPrintMassage.Size = new Size(75, 23);
+            buttonPrintMassage.TabIndex = 1;
+            buttonPrintMassage.Text = "button1";
+            buttonPrintMassage.UseVisualStyleBackColor = true;
+            buttonPrintMassage.Click += buttonPrintMassage_Click;
+            // 
+            // labelMassage
+            // 
+            labelMassage.AutoSize = true;
+            labelMassage.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            labelMassage.Location = new Point(95, 240);
+            labelMassage.Name = "labelMassage";
+            labelMassage.Size = new Size(63, 25);
+            labelMassage.TabIndex = 2;
+            labelMassage.Text = "label1";
+            // 
+            // FileForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(labelMassage);
+            Controls.Add(buttonPrintMassage);
+            Controls.Add(comboBoxFileName);
+            Name = "FileForm";
+            Text = "FileForm";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private ComboBox comboBoxFileName;
+        private Button buttonPrintMassage;
+        private Label labelMassage;
     }
 }
