@@ -12,9 +12,17 @@ namespace Inf_Bez
 {
     public partial class FileForm : Form
     {
-        public FileForm()
+        private Form _prevForm;
+        public FileForm(Form prev)
         {
+            _prevForm = prev;
+            _prevForm.Hide();
             InitializeComponent();
+            FormClosed += OnClosed;
+        }
+        private void OnClosed(object? sender, FormClosedEventArgs e)
+        {
+            _prevForm.Visible = true;
         }
     }
 }

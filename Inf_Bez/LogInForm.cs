@@ -9,7 +9,7 @@ namespace Inf_Bez
 
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
-            FileForm fileForm = new FileForm();
+            FileForm fileForm = new FileForm(this);
             fileForm.ShowDialog();
         }
     }

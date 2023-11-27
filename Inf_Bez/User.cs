@@ -11,7 +11,6 @@ namespace Inf_Bez
         private int _id;
         private string _login;
         private string _password;
-        public Rank _rank;
         public string Login 
         {
             get { return _login; }
