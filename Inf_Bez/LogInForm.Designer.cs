@@ -30,16 +30,16 @@
         {
             textBoxLogin = new TextBox();
             textBoxPassword = new TextBox();
-            labelLogIn = new Label();
             buttonLogIn = new Button();
             labelError = new Label();
             checkBoxPasswordView = new CheckBox();
+            labelLogIn = new Label();
             SuspendLayout();
             // 
             // textBoxLogin
             // 
             textBoxLogin.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxLogin.Location = new Point(262, 98);
+            textBoxLogin.Location = new Point(125, 190);
             textBoxLogin.Margin = new Padding(3, 2, 3, 2);
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(218, 43);
@@ -48,25 +48,15 @@
             // textBoxPassword
             // 
             textBoxPassword.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPassword.Location = new Point(262, 164);
+            textBoxPassword.Location = new Point(125, 260);
             textBoxPassword.Margin = new Padding(3, 2, 3, 2);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(218, 43);
             textBoxPassword.TabIndex = 1;
             // 
-            // labelLogIn
-            // 
-            labelLogIn.AutoSize = true;
-            labelLogIn.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            labelLogIn.Location = new Point(316, 29);
-            labelLogIn.Name = "labelLogIn";
-            labelLogIn.Size = new Size(91, 37);
-            labelLogIn.TabIndex = 2;
-            labelLogIn.Text = "Войти";
-            // 
             // buttonLogIn
             // 
-            buttonLogIn.Location = new Point(262, 232);
+            buttonLogIn.Location = new Point(125, 354);
             buttonLogIn.Margin = new Padding(3, 2, 3, 2);
             buttonLogIn.Name = "buttonLogIn";
             buttonLogIn.Size = new Size(218, 48);
@@ -79,31 +69,40 @@
             // 
             labelError.AutoSize = true;
             labelError.BackColor = SystemColors.Control;
-            labelError.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            labelError.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             labelError.ForeColor = Color.FromArgb(192, 0, 0);
-            labelError.Location = new Point(146, 292);
+            labelError.Location = new Point(125, 404);
             labelError.Name = "labelError";
-            labelError.Size = new Size(434, 37);
+            labelError.Size = new Size(220, 19);
             labelError.TabIndex = 4;
             labelError.Text = "Неправильный логин или пароль";
             // 
             // checkBoxPasswordView
             // 
             checkBoxPasswordView.AutoSize = true;
-            checkBoxPasswordView.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBoxPasswordView.Location = new Point(503, 175);
+            checkBoxPasswordView.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxPasswordView.Location = new Point(349, 275);
             checkBoxPasswordView.Name = "checkBoxPasswordView";
-            checkBoxPasswordView.Size = new Size(179, 29);
+            checkBoxPasswordView.Size = new Size(15, 14);
             checkBoxPasswordView.TabIndex = 5;
-            checkBoxPasswordView.Text = "Показать пароль";
             checkBoxPasswordView.UseVisualStyleBackColor = true;
             checkBoxPasswordView.CheckedChanged += checkBoxPasswordView_CheckedChanged;
+            // 
+            // labelLogIn
+            // 
+            labelLogIn.AutoSize = true;
+            labelLogIn.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
+            labelLogIn.Location = new Point(140, 27);
+            labelLogIn.Name = "labelLogIn";
+            labelLogIn.Size = new Size(182, 38);
+            labelLogIn.TabIndex = 2;
+            labelLogIn.Text = "Авторизация";
             // 
             // LogInForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(474, 501);
             Controls.Add(checkBoxPasswordView);
             Controls.Add(labelError);
             Controls.Add(buttonLogIn);
@@ -122,9 +121,9 @@
 
         private TextBox textBoxLogin;
         private TextBox textBoxPassword;
-        private Label labelLogIn;
         private Button buttonLogIn;
         private Label labelError;
         private CheckBox checkBoxPasswordView;
+        private Label labelLogIn;
     }
 }
