@@ -18,5 +18,13 @@ namespace Inf_Bez
             Password = password;
             Id = id;
         }
+
+        public bool IsCorrectData()
+        {
+            if (string.IsNullOrEmpty(Login)) return false;
+            if (string.IsNullOrEmpty(Password)) return false;
+
+            return true;
+        }
     }
 }

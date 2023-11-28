@@ -6,6 +6,7 @@ namespace Inf_Bez
     public partial class SignUpForm : Form
     {
         private Form _prevForm;
+
         public SignUpForm(Form prev)
         {
             _prevForm = prev;
@@ -15,15 +16,29 @@ namespace Inf_Bez
             labelError.Visible = false;
             textBoxPassword.UseSystemPasswordChar = true;
         }
+
         private void OnClosed(object? sender, FormClosedEventArgs e)
         {
             _prevForm.Visible = true;
         }
+
         private void buttonSignUp_Click(object sender, EventArgs e)
         {
             labelError.Visible = false;
 
             User userForRegistration = new User(textBoxLogin.Text, textBoxPassword.Text, GetId());
+
+            if (!userForRegistration.IsCorrectData())
+            {
+                labelError.Text = "Пустые данные пользователя";
+                labelError.Visible = true;
+                return;
+            }
+            else
+            {
+                labelError.Text = "Такой пользователь уже существует";
+            }
+
             var usersData = File.Exists("Users.json")
                 ? JsonConvert.DeserializeObject<List<User>>(File.ReadAllText("Users.json"))
                 : null;

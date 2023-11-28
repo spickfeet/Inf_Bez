@@ -17,7 +17,6 @@ namespace Inf_Bez
         private User _user;
         public FileForm(Form prev, User user)
         {
-
             _prevForm = prev;
             _prevForm.Hide();
             _user = user;
@@ -33,7 +32,7 @@ namespace Inf_Bez
         {
             if (comboBoxFileName.SelectedIndex == -1)
             {
-                errorProviderFile.SetError(comboBoxFileName, "Выбtрите файл");
+                errorProviderFile.SetError(comboBoxFileName, "Выберите файл");
                 return;
             }
             var massage = JsonConvert.DeserializeObject<MassageAndID>(File.ReadAllText(comboBoxFileName.Text));
@@ -45,7 +44,7 @@ namespace Inf_Bez
             }
             else
             {
-                errorProviderFile.SetError(comboBoxFileName, "Увас нет доступа к этому файлу");
+                errorProviderFile.SetError(comboBoxFileName, "У вас нет доступа к этому файлу");
             }
         }
     }
