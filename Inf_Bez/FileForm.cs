@@ -39,7 +39,7 @@ namespace Inf_Bez
             if (_user.Id.Contains(massage.ID))
             {
                 errorProviderFile.Clear();
-                MassageForm massageForm = new MassageForm(massage.Message);
+                MessageForm massageForm = new MessageForm(massage.Message);
                 massageForm.ShowDialog();
             }
             else

@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Inf_Bez
 {
-    public partial class MassageForm : Form
+    public partial class MessageForm : Form
     {
-        public MassageForm(string massage)
+        public MessageForm(string massage)
         {
             InitializeComponent();
-            labelMassage.Text = massage;
+            labelMessage.Text = massage;
         }
     }
 }
