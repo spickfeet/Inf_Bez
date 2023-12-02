@@ -35,11 +35,11 @@ namespace Inf_Bez
                 errorProviderFile.SetError(comboBoxFileName, "Выберите файл");
                 return;
             }
-            var massage = JsonConvert.DeserializeObject<MassageAndID>(File.ReadAllText(comboBoxFileName.Text));
+            var massage = JsonConvert.DeserializeObject<MessageContainer>(File.ReadAllText(comboBoxFileName.Text));
             if (_user.Id.Contains(massage.ID))
             {
                 errorProviderFile.Clear();
-                MassageForm massageForm = new MassageForm(massage.Massage);
+                MassageForm massageForm = new MassageForm(massage.Message);
                 massageForm.ShowDialog();
             }
             else

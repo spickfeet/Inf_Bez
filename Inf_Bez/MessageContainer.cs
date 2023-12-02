@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace Inf_Bez
 {
-    internal class MassageAndID
+    internal class MessageContainer
     {
-        private string _massage;
-        private int _id;
-        public string Massage
+        private string _message;
+        public string Message
         {
-            get { return _massage; }
-            set { _massage = value; }
+            get { return _message; }
+            set { _message = value; }
         }
+
+        private int _id;
         public int ID
         {
             get { return _id; }
             set { _id = value; }
         }
-        public MassageAndID(string massage, int id)
+
+        public MessageContainer(string massage, int id)
         {
-            Massage = massage;
+            Message = massage;
             ID = id;
         }
     }
