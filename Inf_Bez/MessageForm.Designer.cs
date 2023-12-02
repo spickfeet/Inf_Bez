@@ -1,6 +1,6 @@
 ﻿namespace Inf_Bez
 {
-    partial class MassageForm
+    partial class MessageForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelMassage = new Label();
+            labelMessage = new Label();
             SuspendLayout();
             // 
             // labelMassage
             // 
-            labelMassage.AutoSize = true;
-            labelMassage.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMassage.Location = new Point(28, 63);
-            labelMassage.Name = "labelMassage";
-            labelMassage.Size = new Size(63, 25);
-            labelMassage.TabIndex = 0;
-            labelMassage.Text = "label1";
+            labelMessage.AutoSize = true;
+            labelMessage.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            labelMessage.Location = new Point(28, 63);
+            labelMessage.Name = "labelMassage";
+            labelMessage.Size = new Size(63, 25);
+            labelMessage.TabIndex = 0;
+            labelMessage.Text = "label1";
             // 
             // MassageForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(556, 285);
-            Controls.Add(labelMassage);
+            Controls.Add(labelMessage);
             Name = "MassageForm";
             Text = "MassageForm";
             ResumeLayout(false);
@@ -55,6 +55,6 @@
 
         #endregion
 
-        private Label labelMassage;
+        private Label labelMessage;
     }
 }
