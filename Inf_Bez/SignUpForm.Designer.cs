@@ -33,8 +33,11 @@
             buttonSignUp = new Button();
             labelError = new Label();
             checkBoxPasswordView = new CheckBox();
-            labelLogIn = new Label();
+            labelTitleSignUp = new Label();
             textBoxId = new TextBox();
+            labelLogin = new Label();
+            labelPassword = new Label();
+            labelId = new Label();
             SuspendLayout();
             // 
             // textBoxLogin
@@ -89,15 +92,15 @@
             checkBoxPasswordView.UseVisualStyleBackColor = true;
             checkBoxPasswordView.CheckedChanged += checkBoxPasswordView_CheckedChanged;
             // 
-            // labelLogIn
+            // labelTitleSignUp
             // 
-            labelLogIn.AutoSize = true;
-            labelLogIn.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            labelLogIn.Location = new Point(140, 27);
-            labelLogIn.Name = "labelLogIn";
-            labelLogIn.Size = new Size(176, 38);
-            labelLogIn.TabIndex = 2;
-            labelLogIn.Text = "Регистрация";
+            labelTitleSignUp.AutoSize = true;
+            labelTitleSignUp.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
+            labelTitleSignUp.Location = new Point(140, 27);
+            labelTitleSignUp.Name = "labelTitleSignUp";
+            labelTitleSignUp.Size = new Size(176, 38);
+            labelTitleSignUp.TabIndex = 2;
+            labelTitleSignUp.Text = "Регистрация";
             // 
             // textBoxId
             // 
@@ -108,16 +111,49 @@
             textBoxId.Size = new Size(218, 43);
             textBoxId.TabIndex = 6;
             // 
+            // labelLogin
+            // 
+            labelLogin.AutoSize = true;
+            labelLogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            labelLogin.Location = new Point(125, 121);
+            labelLogin.Name = "labelLogin";
+            labelLogin.Size = new Size(37, 15);
+            labelLogin.TabIndex = 7;
+            labelLogin.Text = "Login";
+            // 
+            // labelPassword
+            // 
+            labelPassword.AutoSize = true;
+            labelPassword.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            labelPassword.Location = new Point(125, 191);
+            labelPassword.Name = "labelPassword";
+            labelPassword.Size = new Size(57, 15);
+            labelPassword.TabIndex = 8;
+            labelPassword.Text = "Password";
+            // 
+            // labelId
+            // 
+            labelId.AutoSize = true;
+            labelId.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            labelId.Location = new Point(125, 261);
+            labelId.Name = "labelId";
+            labelId.Size = new Size(17, 15);
+            labelId.TabIndex = 9;
+            labelId.Text = "Id";
+            // 
             // SignUpForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(474, 501);
+            Controls.Add(labelId);
+            Controls.Add(labelPassword);
+            Controls.Add(labelLogin);
             Controls.Add(textBoxId);
             Controls.Add(checkBoxPasswordView);
             Controls.Add(labelError);
             Controls.Add(buttonSignUp);
-            Controls.Add(labelLogIn);
+            Controls.Add(labelTitleSignUp);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxLogin);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -135,7 +171,10 @@
         private Button buttonSignUp;
         private Label labelError;
         private CheckBox checkBoxPasswordView;
-        private Label labelLogIn;
+        private Label labelTitleSignUp;
         private TextBox textBoxId;
+        private Label labelLogin;
+        private Label labelPassword;
+        private Label labelId;
     }
 }

@@ -39,7 +39,7 @@
             // 
             comboBoxFileName.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxFileName.FormattingEnabled = true;
-            comboBoxFileName.Items.AddRange(new object[] { "Anime.json", "Films.json", "Games.json", "Books.json" });
+            comboBoxFileName.Items.AddRange(new object[] { "Anime.json", "Games.json", "Films.json", "Books.json" });
             comboBoxFileName.Location = new Point(12, 39);
             comboBoxFileName.Name = "comboBoxFileName";
             comboBoxFileName.Size = new Size(121, 23);

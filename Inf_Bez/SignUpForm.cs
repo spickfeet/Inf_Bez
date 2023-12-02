@@ -63,7 +63,7 @@ namespace Inf_Bez
             usersData.Add(userForRegistration);
             File.WriteAllText("Users.json", JsonConvert.SerializeObject(usersData));
             Close();
-            
+
         }
 
         private void checkBoxPasswordView_CheckedChanged(object sender, EventArgs e)
