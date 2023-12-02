@@ -1,4 +1,7 @@
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Inf_Bez
 {
@@ -18,11 +21,15 @@ namespace Inf_Bez
                 ? JsonConvert.DeserializeObject<List<User>>(File.ReadAllText("Users.json"))
                 : throw new Exception("Users.json не найден");
 
-            if (users == null) throw new Exception("Не удалось считать файл");
+            if (users == null)
+            {
+                labelError.Visible = true;
+                return;
+            }
 
             foreach (var user in users)
             {
-                if (user.Login == textBoxLogin.Text && user.Password == textBoxPassword.Text)
+                if (user.Login == textBoxLogin.Text && user.Password == User.ConvertToHashCode(textBoxPassword.Text))
                 {
                     FileForm fileForm = new FileForm(this, user);
                     fileForm.ShowDialog();

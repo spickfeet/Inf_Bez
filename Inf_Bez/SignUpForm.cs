@@ -26,7 +26,7 @@ namespace Inf_Bez
         {
             labelError.Visible = false;
 
-            User userForRegistration = new User(textBoxLogin.Text, textBoxPassword.Text, GetId());
+            User userForRegistration = new User(textBoxLogin.Text, User.ConvertToHashCode(textBoxPassword.Text), GetId());
 
             if (!userForRegistration.IsCorrectData())
             {
@@ -52,7 +52,6 @@ namespace Inf_Bez
                         labelError.Visible = true;
                         return;
                     }
-
                 }
             }
             else
