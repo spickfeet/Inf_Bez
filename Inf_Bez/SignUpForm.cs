@@ -60,7 +60,7 @@ namespace Inf_Bez
             }
 
             usersData.Add(userForRegistration);
-            File.WriteAllText("Users.json", JsonConvert.SerializeObject(usersData));
+            File.WriteAllText("Users.json", JsonConvert.SerializeObject(usersData,Formatting.Indented));
             Close();
 
         }
