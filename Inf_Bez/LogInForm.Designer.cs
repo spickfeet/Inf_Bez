@@ -28,133 +28,132 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.buttonLogIn = new System.Windows.Forms.Button();
-            this.labelError = new System.Windows.Forms.Label();
-            this.checkBoxPasswordView = new System.Windows.Forms.CheckBox();
-            this.labelTitleLogIn = new System.Windows.Forms.Label();
-            this.labelSignUp = new System.Windows.Forms.Label();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.labelLogin = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            textBoxLogin = new TextBox();
+            textBoxPassword = new TextBox();
+            buttonLogIn = new Button();
+            labelError = new Label();
+            checkBoxPasswordView = new CheckBox();
+            labelTitleLogIn = new Label();
+            labelSignUp = new Label();
+            labelPassword = new Label();
+            labelLogin = new Label();
+            SuspendLayout();
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxLogin.Location = new System.Drawing.Point(125, 190);
-            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(218, 43);
-            this.textBoxLogin.TabIndex = 0;
+            textBoxLogin.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxLogin.Location = new Point(125, 190);
+            textBoxLogin.Margin = new Padding(3, 2, 3, 2);
+            textBoxLogin.Name = "textBoxLogin";
+            textBoxLogin.Size = new Size(218, 43);
+            textBoxLogin.TabIndex = 0;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPassword.Location = new System.Drawing.Point(125, 260);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(218, 43);
-            this.textBoxPassword.TabIndex = 1;
+            textBoxPassword.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPassword.Location = new Point(125, 260);
+            textBoxPassword.Margin = new Padding(3, 2, 3, 2);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(218, 43);
+            textBoxPassword.TabIndex = 1;
             // 
             // buttonLogIn
             // 
-            this.buttonLogIn.Location = new System.Drawing.Point(125, 354);
-            this.buttonLogIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonLogIn.Name = "buttonLogIn";
-            this.buttonLogIn.Size = new System.Drawing.Size(218, 48);
-            this.buttonLogIn.TabIndex = 3;
-            this.buttonLogIn.Text = "Войти";
-            this.buttonLogIn.UseVisualStyleBackColor = true;
-            this.buttonLogIn.Click += new System.EventHandler(this.buttonLogIn_Click);
+            buttonLogIn.Location = new Point(125, 354);
+            buttonLogIn.Margin = new Padding(3, 2, 3, 2);
+            buttonLogIn.Name = "buttonLogIn";
+            buttonLogIn.Size = new Size(218, 48);
+            buttonLogIn.TabIndex = 3;
+            buttonLogIn.Text = "Войти";
+            buttonLogIn.UseVisualStyleBackColor = true;
+            buttonLogIn.Click += buttonLogIn_Click;
             // 
             // labelError
             // 
-            this.labelError.AutoSize = true;
-            this.labelError.BackColor = System.Drawing.SystemColors.Control;
-            this.labelError.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelError.Location = new System.Drawing.Point(125, 404);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(220, 19);
-            this.labelError.TabIndex = 4;
-            this.labelError.Text = "Неправильный логин или пароль";
+            labelError.AutoSize = true;
+            labelError.BackColor = SystemColors.Control;
+            labelError.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelError.ForeColor = Color.FromArgb(192, 0, 0);
+            labelError.Location = new Point(125, 404);
+            labelError.Name = "labelError";
+            labelError.Size = new Size(220, 19);
+            labelError.TabIndex = 4;
+            labelError.Text = "Неправильный логин или пароль";
             // 
             // checkBoxPasswordView
             // 
-            this.checkBoxPasswordView.AutoSize = true;
-            this.checkBoxPasswordView.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxPasswordView.Location = new System.Drawing.Point(349, 275);
-            this.checkBoxPasswordView.Name = "checkBoxPasswordView";
-            this.checkBoxPasswordView.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxPasswordView.TabIndex = 5;
-            this.checkBoxPasswordView.UseVisualStyleBackColor = true;
-            this.checkBoxPasswordView.CheckedChanged += new System.EventHandler(this.checkBoxPasswordView_CheckedChanged);
-            this.checkBoxPasswordView.Click += new System.EventHandler(this.checkBoxPasswordView_CheckedChanged);
+            checkBoxPasswordView.AutoSize = true;
+            checkBoxPasswordView.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxPasswordView.Location = new Point(349, 275);
+            checkBoxPasswordView.Name = "checkBoxPasswordView";
+            checkBoxPasswordView.Size = new Size(15, 14);
+            checkBoxPasswordView.TabIndex = 5;
+            checkBoxPasswordView.UseVisualStyleBackColor = true;
+            checkBoxPasswordView.CheckedChanged += checkBoxPasswordView_CheckedChanged;
+            checkBoxPasswordView.Click += checkBoxPasswordView_CheckedChanged;
             // 
             // labelTitleLogIn
             // 
-            this.labelTitleLogIn.AutoSize = true;
-            this.labelTitleLogIn.Font = new System.Drawing.Font("Segoe UI", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTitleLogIn.Location = new System.Drawing.Point(140, 27);
-            this.labelTitleLogIn.Name = "labelTitleLogIn";
-            this.labelTitleLogIn.Size = new System.Drawing.Size(182, 38);
-            this.labelTitleLogIn.TabIndex = 2;
-            this.labelTitleLogIn.Text = "Авторизация";
+            labelTitleLogIn.AutoSize = true;
+            labelTitleLogIn.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
+            labelTitleLogIn.Location = new Point(140, 27);
+            labelTitleLogIn.Name = "labelTitleLogIn";
+            labelTitleLogIn.Size = new Size(182, 38);
+            labelTitleLogIn.TabIndex = 2;
+            labelTitleLogIn.Text = "Авторизация";
             // 
             // labelSignUp
             // 
-            this.labelSignUp.AutoSize = true;
-            this.labelSignUp.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.labelSignUp.Location = new System.Drawing.Point(195, 337);
-            this.labelSignUp.Name = "labelSignUp";
-            this.labelSignUp.Size = new System.Drawing.Size(150, 15);
-            this.labelSignUp.TabIndex = 6;
-            this.labelSignUp.Text = "...или зарегистрироваться";
-            this.labelSignUp.Click += new System.EventHandler(this.labelSignUp_Click);
+            labelSignUp.AutoSize = true;
+            labelSignUp.ForeColor = SystemColors.MenuHighlight;
+            labelSignUp.Location = new Point(195, 337);
+            labelSignUp.Name = "labelSignUp";
+            labelSignUp.Size = new Size(150, 15);
+            labelSignUp.TabIndex = 6;
+            labelSignUp.Text = "...или зарегистрироваться";
+            labelSignUp.Click += labelSignUp_Click;
             // 
             // labelPassword
             // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPassword.Location = new System.Drawing.Point(125, 243);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(57, 15);
-            this.labelPassword.TabIndex = 11;
-            this.labelPassword.Text = "Password";
+            labelPassword.AutoSize = true;
+            labelPassword.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            labelPassword.Location = new Point(125, 243);
+            labelPassword.Name = "labelPassword";
+            labelPassword.Size = new Size(57, 15);
+            labelPassword.TabIndex = 11;
+            labelPassword.Text = "Password";
             // 
             // labelLogin
             // 
-            this.labelLogin.AutoSize = true;
-            this.labelLogin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLogin.Location = new System.Drawing.Point(125, 173);
-            this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(37, 15);
-            this.labelLogin.TabIndex = 10;
-            this.labelLogin.Text = "Login";
+            labelLogin.AutoSize = true;
+            labelLogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            labelLogin.Location = new Point(125, 173);
+            labelLogin.Name = "labelLogin";
+            labelLogin.Size = new Size(37, 15);
+            labelLogin.TabIndex = 10;
+            labelLogin.Text = "Login";
             // 
             // LogInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(474, 501);
-            this.Controls.Add(this.labelPassword);
-            this.Controls.Add(this.labelLogin);
-            this.Controls.Add(this.labelSignUp);
-            this.Controls.Add(this.checkBoxPasswordView);
-            this.Controls.Add(this.labelError);
-            this.Controls.Add(this.buttonLogIn);
-            this.Controls.Add(this.labelTitleLogIn);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxLogin);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "LogInForm";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(474, 501);
+            Controls.Add(labelPassword);
+            Controls.Add(labelLogin);
+            Controls.Add(labelSignUp);
+            Controls.Add(checkBoxPasswordView);
+            Controls.Add(labelError);
+            Controls.Add(buttonLogIn);
+            Controls.Add(labelTitleLogIn);
+            Controls.Add(textBoxPassword);
+            Controls.Add(textBoxLogin);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "LogInForm";
+            Text = "DataViewer";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

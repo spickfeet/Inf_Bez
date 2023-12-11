@@ -41,13 +41,41 @@ namespace Inf_Bez
             if (_user.Id.Contains(message.ID))
             {
                 errorProviderFile.Clear();
+
+                textBoxPassword.Show();
+                labelPassword.Show();
+                checkBoxPasswordView.Show();
+
+                return;
+
+                // сделать проверку на соответствие паролей
+
                 string? title = comboBoxFileName.Text;
                 MessageForm messageForm = new MessageForm(title, message.Message);
                 messageForm.ShowDialog();
+
+
+                return;
             }
             else
             {
+                textBoxPassword.Hide();
+                labelPassword.Hide();
+                checkBoxPasswordView.Hide();
+
                 errorProviderFile.SetError(comboBoxFileName, "У вас нет доступа к этому файлу");
+            }
+        }
+
+        private void checkBoxPasswordView_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxPasswordView.Checked)
+            {
+                textBoxPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBoxPassword.UseSystemPasswordChar = true;
             }
         }
     }

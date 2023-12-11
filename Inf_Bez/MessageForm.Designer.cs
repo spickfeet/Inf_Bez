@@ -28,31 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
+            richTextBoxMessage = new RichTextBox();
+            SuspendLayout();
             // 
-            // richTextBox1
+            // richTextBoxMessage
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(700, 408);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            richTextBoxMessage.Location = new Point(12, 12);
+            richTextBoxMessage.Name = "richTextBoxMessage";
+            richTextBoxMessage.ReadOnly = true;
+            richTextBoxMessage.Size = new Size(700, 408);
+            richTextBoxMessage.TabIndex = 1;
+            richTextBoxMessage.Text = "";
             // 
             // MessageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 432);
-            this.Controls.Add(this.richTextBox1);
-            this.Name = "MessageForm";
-            this.Text = "MassageForm";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(724, 432);
+            Controls.Add(richTextBoxMessage);
+            Name = "MessageForm";
+            Text = "DataViewer";
+            ResumeLayout(false);
         }
 
         #endregion
-        private RichTextBox richTextBox1;
+        private RichTextBox richTextBoxMessage;
     }
 }
