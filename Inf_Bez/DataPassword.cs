@@ -1,4 +1,4 @@
-﻿namespace Inf_Bez
+namespace Inf_Bez
 {
     internal class DataPassword
     {
