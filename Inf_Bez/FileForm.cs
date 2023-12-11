@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,33 +36,30 @@ namespace Inf_Bez
                 errorProviderFile.SetError(comboBoxFileName, "Выберите файл");
                 return;
             }
-            string filePath = comboBoxFileName.Text + ".json";
-            var message = JsonConvert.DeserializeObject<MessageContainer>(File.ReadAllText(filePath));
+
+            var message = JsonConvert.DeserializeObject<MessageContainer>(File.ReadAllText(comboBoxFileName.Text + ".json"));
 
             if (_user.Id.Contains(message.ID))
             {
                 errorProviderFile.Clear();
 
-                textBoxPassword.Show();
-                labelPassword.Show();
-                checkBoxPasswordView.Show();
+                ChangePasswordVisibleState(true);
 
-                return;
+                var passwords = JsonConvert.DeserializeObject<DataPassword>(File.ReadAllText("DataPasswords.json"));
 
-                // сделать проверку на соответствие паролей
+                if (passwords.Password == HashCodeConvertor.ConvertToHashCode(textBoxPassword.Text))
+                {
+                    string? title = comboBoxFileName.Text;
+                    MessageForm messageForm = new MessageForm(title, message.Message);
+                    messageForm.ShowDialog();
 
-                string? title = comboBoxFileName.Text;
-                MessageForm messageForm = new MessageForm(title, message.Message);
-                messageForm.ShowDialog();
-
-
-                return;
+                    return;
+                }
+                errorProviderFile.SetError(textBoxPassword, "Неверный пароль");
             }
             else
             {
-                textBoxPassword.Hide();
-                labelPassword.Hide();
-                checkBoxPasswordView.Hide();
+                ChangePasswordVisibleState(false);
 
                 errorProviderFile.SetError(comboBoxFileName, "У вас нет доступа к этому файлу");
             }
@@ -77,6 +75,13 @@ namespace Inf_Bez
             {
                 textBoxPassword.UseSystemPasswordChar = true;
             }
+        }
+
+        private void ChangePasswordVisibleState(bool state)
+        {
+            textBoxPassword.Visible = state;
+            labelPassword.Visible = state;
+            checkBoxPasswordView.Visible = state;
         }
     }
 }

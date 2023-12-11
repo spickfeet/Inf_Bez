@@ -29,7 +29,7 @@ namespace Inf_Bez
 
             foreach (var user in users)
             {
-                if (user.Login == textBoxLogin.Text && user.Password == User.ConvertToHashCode(textBoxPassword.Text))
+                if (user.Login == textBoxLogin.Text && user.Password == HashCodeConvertor.ConvertToHashCode(textBoxPassword.Text))
                 {
                     FileForm fileForm = new FileForm(this, user);
                     fileForm.ShowDialog();
