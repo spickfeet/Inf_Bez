@@ -28,53 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.comboBoxFileName = new System.Windows.Forms.ComboBox();
-            this.buttonReadFile = new System.Windows.Forms.Button();
-            this.errorProviderFile = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFile)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            comboBoxFileName = new ComboBox();
+            buttonReadFile = new Button();
+            errorProviderFile = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProviderFile).BeginInit();
+            SuspendLayout();
             // 
             // comboBoxFileName
             // 
-            this.comboBoxFileName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFileName.FormattingEnabled = true;
-            this.comboBoxFileName.Items.AddRange(new object[] {
-            "Anime",
-            "Games",
-            "Films",
-            "Books"});
-            this.comboBoxFileName.Location = new System.Drawing.Point(12, 39);
-            this.comboBoxFileName.Name = "comboBoxFileName";
-            this.comboBoxFileName.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxFileName.TabIndex = 0;
+            comboBoxFileName.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFileName.FormattingEnabled = true;
+            comboBoxFileName.Items.AddRange(new object[] { "Employees", "Subsidiaries", "Revenue" });
+            comboBoxFileName.Location = new Point(14, 52);
+            comboBoxFileName.Margin = new Padding(3, 4, 3, 4);
+            comboBoxFileName.Name = "comboBoxFileName";
+            comboBoxFileName.Size = new Size(138, 28);
+            comboBoxFileName.TabIndex = 0;
             // 
             // buttonReadFile
             // 
-            this.buttonReadFile.Location = new System.Drawing.Point(160, 39);
-            this.buttonReadFile.Name = "buttonReadFile";
-            this.buttonReadFile.Size = new System.Drawing.Size(131, 74);
-            this.buttonReadFile.TabIndex = 1;
-            this.buttonReadFile.Text = "Прочитать";
-            this.buttonReadFile.UseVisualStyleBackColor = true;
-            this.buttonReadFile.Click += new System.EventHandler(this.buttonPrintMassage_Click);
+            buttonReadFile.Location = new Point(183, 52);
+            buttonReadFile.Margin = new Padding(3, 4, 3, 4);
+            buttonReadFile.Name = "buttonReadFile";
+            buttonReadFile.Size = new Size(150, 99);
+            buttonReadFile.TabIndex = 1;
+            buttonReadFile.Text = "Прочитать";
+            buttonReadFile.UseVisualStyleBackColor = true;
+            buttonReadFile.Click += buttonPrintMassage_Click;
             // 
             // errorProviderFile
             // 
-            this.errorProviderFile.ContainerControl = this;
+            errorProviderFile.ContainerControl = this;
             // 
             // FileForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 231);
-            this.Controls.Add(this.buttonReadFile);
-            this.Controls.Add(this.comboBoxFileName);
-            this.Name = "FileForm";
-            this.Text = "FileForm";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFile)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(358, 308);
+            Controls.Add(buttonReadFile);
+            Controls.Add(comboBoxFileName);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FileForm";
+            Text = "FileForm";
+            ((System.ComponentModel.ISupportInitialize)errorProviderFile).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
