@@ -10,26 +10,12 @@ namespace Inf_Bez
             [STAThread]
             static void Main()
             {
-                if (!File.Exists("Anime.json"))
-                {
-                    MessageContainer text = new("Атака титанов, Истребитель демонов", 1);
-                    File.WriteAllText("Anime.json", JsonConvert.SerializeObject(text,Formatting.Indented));
-                }
-                if (!File.Exists("Game.json"))
-                {
-                    MessageContainer text = new("Valorant, DOTA 2, Minecraft", 2);
-                    File.WriteAllText("Games.json", JsonConvert.SerializeObject(text, Formatting.Indented));
-                }
-                if (!File.Exists("Films.json"))
-                {
-                    MessageContainer text = new("Титаник, Один дома", 3);
-                    File.WriteAllText("Films.json", JsonConvert.SerializeObject(text, Formatting.Indented));
-                }
-                if (!File.Exists("Books.json"))
-                {
-                    MessageContainer text = new("Война и мир", 4);
-                    File.WriteAllText("Books.json", JsonConvert.SerializeObject(text, Formatting.Indented));
-                }             
+                MessageContainer employees = new("\tАлексей Анатольевич\nВозраст: 21 год\nID: 2342342\n\tДмитрий Вадимович\nВозраст: 31 год\nID: 6776823\n\tCергей Викторович\nВозраст: 21 год\nID: 79834387\n", 1);
+                File.WriteAllText("Employees.json", JsonConvert.SerializeObject(employees, Formatting.Indented));
+                MessageContainer subsidiaries = new("\tДочернии компании\nGrinding Gear Games\nRiot Games\nTencent Pictures\nYager Development\nIflix", 2);
+                File.WriteAllText("Subsidiaries.json", JsonConvert.SerializeObject(subsidiaries, Formatting.Indented));
+                MessageContainer revenue = new("\t\tДоход\n\t2019 год\n 1.000.000\n\t2020 год\n 1.500.000\n\t2021 год\n 2.000.000", 3);
+                File.WriteAllText("Revenue.json", JsonConvert.SerializeObject(revenue, Formatting.Indented));          
                 ApplicationConfiguration.Initialize();
                 Application.Run(new LogInForm());
             }
