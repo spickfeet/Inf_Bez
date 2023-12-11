@@ -37,7 +37,7 @@ namespace Inf_Bez
                 labelError.Text = "Такой пользователь уже существует";
             }
 
-            User userForRegistration = new User(textBoxLogin.Text, User.ConvertToHashCode(textBoxPassword.Text), GetId());
+            User userForRegistration = new User(textBoxLogin.Text, HashCodeConvertor.ConvertToHashCode(textBoxPassword.Text), GetId());
 
             var usersData = File.Exists("Users.json")
                 ? JsonConvert.DeserializeObject<List<User>>(File.ReadAllText("Users.json"))
