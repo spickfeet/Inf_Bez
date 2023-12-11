@@ -28,48 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            comboBoxFileName = new ComboBox();
-            buttonReadFile = new Button();
-            errorProviderFile = new ErrorProvider(components);
-            ((System.ComponentModel.ISupportInitialize)errorProviderFile).BeginInit();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.comboBoxFileName = new System.Windows.Forms.ComboBox();
+            this.buttonReadFile = new System.Windows.Forms.Button();
+            this.errorProviderFile = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFile)).BeginInit();
+            this.SuspendLayout();
             // 
             // comboBoxFileName
             // 
-            comboBoxFileName.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxFileName.FormattingEnabled = true;
-            comboBoxFileName.Items.AddRange(new object[] { "Anime.json", "Games.json", "Films.json", "Books.json" });
-            comboBoxFileName.Location = new Point(12, 39);
-            comboBoxFileName.Name = "comboBoxFileName";
-            comboBoxFileName.Size = new Size(121, 23);
-            comboBoxFileName.TabIndex = 0;
+            this.comboBoxFileName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFileName.FormattingEnabled = true;
+            this.comboBoxFileName.Items.AddRange(new object[] {
+            "Anime",
+            "Games",
+            "Films",
+            "Books"});
+            this.comboBoxFileName.Location = new System.Drawing.Point(12, 39);
+            this.comboBoxFileName.Name = "comboBoxFileName";
+            this.comboBoxFileName.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxFileName.TabIndex = 0;
             // 
             // buttonReadFile
             // 
-            buttonReadFile.Location = new Point(160, 39);
-            buttonReadFile.Name = "buttonReadFile";
-            buttonReadFile.Size = new Size(131, 74);
-            buttonReadFile.TabIndex = 1;
-            buttonReadFile.Text = "Прочитать";
-            buttonReadFile.UseVisualStyleBackColor = true;
-            buttonReadFile.Click += buttonPrintMassage_Click;
+            this.buttonReadFile.Location = new System.Drawing.Point(160, 39);
+            this.buttonReadFile.Name = "buttonReadFile";
+            this.buttonReadFile.Size = new System.Drawing.Size(131, 74);
+            this.buttonReadFile.TabIndex = 1;
+            this.buttonReadFile.Text = "Прочитать";
+            this.buttonReadFile.UseVisualStyleBackColor = true;
+            this.buttonReadFile.Click += new System.EventHandler(this.buttonPrintMassage_Click);
             // 
             // errorProviderFile
             // 
-            errorProviderFile.ContainerControl = this;
+            this.errorProviderFile.ContainerControl = this;
             // 
             // FileForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(313, 231);
-            Controls.Add(buttonReadFile);
-            Controls.Add(comboBoxFileName);
-            Name = "FileForm";
-            Text = "FileForm";
-            ((System.ComponentModel.ISupportInitialize)errorProviderFile).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(313, 231);
+            this.Controls.Add(this.buttonReadFile);
+            this.Controls.Add(this.comboBoxFileName);
+            this.Name = "FileForm";
+            this.Text = "FileForm";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFile)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

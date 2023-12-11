@@ -26,9 +26,7 @@ namespace Inf_Bez
         {
             labelError.Visible = false;
 
-            User userForRegistration = new User(textBoxLogin.Text, User.ConvertToHashCode(textBoxPassword.Text), GetId());
-
-            if (!userForRegistration.IsCorrectData())
+            if (string.IsNullOrEmpty(textBoxLogin.Text) || string.IsNullOrEmpty(textBoxPassword.Text))
             {
                 labelError.Text = "Пустые данные пользователя";
                 labelError.Visible = true;
@@ -38,6 +36,8 @@ namespace Inf_Bez
             {
                 labelError.Text = "Такой пользователь уже существует";
             }
+
+            User userForRegistration = new User(textBoxLogin.Text, User.ConvertToHashCode(textBoxPassword.Text), GetId());
 
             var usersData = File.Exists("Users.json")
                 ? JsonConvert.DeserializeObject<List<User>>(File.ReadAllText("Users.json"))
@@ -86,6 +86,7 @@ namespace Inf_Bez
             {
                 if (int.TryParse(item, out int i)) ids.Add(i);
             }
+
             return ids;
         }
     }
