@@ -16,6 +16,9 @@ namespace Inf_Bez
     {
         private Form _prevForm;
         private User _user;
+
+        private MessageContainer _messageContainer;
+
         public FileForm(Form prev, User user)
         {
             _prevForm = prev;
@@ -31,37 +34,23 @@ namespace Inf_Bez
 
         private void buttonPrintMassage_Click(object sender, EventArgs e)
         {
-            if (comboBoxFileName.SelectedIndex <= -1)
+            var dataPasswords = JsonConvert.DeserializeObject<List<DataPassword>>(File.ReadAllText("DataPasswords.json"));
+
+            foreach (DataPassword dataPassword in dataPasswords)
             {
-                errorProviderFile.SetError(comboBoxFileName, "Выберите файл");
-                return;
-            }
-
-            var message = JsonConvert.DeserializeObject<MessageContainer>(File.ReadAllText(comboBoxFileName.Text + ".json"));
-
-            if (_user.Id.Contains(message.ID))
-            {
-                errorProviderFile.Clear();
-
-                ChangePasswordVisibleState(true);
-
-                var passwords = JsonConvert.DeserializeObject<DataPassword>(File.ReadAllText("DataPasswords.json"));
-
-                if (passwords.Password == HashCodeConvertor.ConvertToHashCode(textBoxPassword.Text))
+                if (dataPassword.FileName == comboBoxFileName.Text + ".json")
                 {
-                    string? title = comboBoxFileName.Text;
-                    MessageForm messageForm = new MessageForm(title, message.Message);
-                    messageForm.ShowDialog();
-
-                    return;
+                    if (dataPassword.Password == HashCodeConvertor.ConvertToHashCode(textBoxPassword.Text))
+                    {
+                        string? title = comboBoxFileName.Text;
+                        MessageForm messageForm = new MessageForm(title, _messageContainer.Message);
+                        messageForm.ShowDialog();
+                    }
+                    else
+                    {
+                        errorProviderFile.SetError(textBoxPassword, "Неверный пароль");
+                    }
                 }
-                errorProviderFile.SetError(textBoxPassword, "Неверный пароль");
-            }
-            else
-            {
-                ChangePasswordVisibleState(false);
-
-                errorProviderFile.SetError(comboBoxFileName, "У вас нет доступа к этому файлу");
             }
         }
 
@@ -82,6 +71,35 @@ namespace Inf_Bez
             textBoxPassword.Visible = state;
             labelPassword.Visible = state;
             checkBoxPasswordView.Visible = state;
+            buttonReadFile.Visible = state;
+
+            textBoxPassword.Text = string.Empty;
+        }
+
+        private void comboBoxFileName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangePasswordVisibleState(false);
+
+            if (comboBoxFileName.SelectedIndex <= -1)
+            {
+                errorProviderFile.SetError(comboBoxFileName, "Выберите файл");
+                return;
+            }
+
+            _messageContainer = JsonConvert.DeserializeObject<MessageContainer>(File.ReadAllText(comboBoxFileName.Text + ".json"));
+
+            if (_user.Id.Contains(_messageContainer.ID))
+            {
+                errorProviderFile.Clear();
+
+                ChangePasswordVisibleState(true);
+            }
+            else
+            {
+                ChangePasswordVisibleState(false);
+
+                errorProviderFile.SetError(comboBoxFileName, "У вас нет доступа к этому файлу");
+            }
         }
     }
 }

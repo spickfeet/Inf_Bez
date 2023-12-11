@@ -46,7 +46,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(724, 432);
             Controls.Add(richTextBoxMessage);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MessageForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "DataViewer";
             ResumeLayout(false);
         }
