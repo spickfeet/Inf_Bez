@@ -17,7 +17,7 @@ namespace Inf_Bez
             InitializeComponent();
 
             Text = title;
-            richTextBox1.Text = massage;
+            richTextBoxMessage.Text = massage;
         }
     }
 }
