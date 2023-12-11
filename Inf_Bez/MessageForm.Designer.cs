@@ -28,33 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelMessage = new Label();
-            SuspendLayout();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.SuspendLayout();
             // 
-            // labelMassage
+            // richTextBox1
             // 
-            labelMessage.AutoSize = true;
-            labelMessage.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMessage.Location = new Point(28, 63);
-            labelMessage.Name = "labelMassage";
-            labelMessage.Size = new Size(63, 25);
-            labelMessage.TabIndex = 0;
-            labelMessage.Text = "label1";
+            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(700, 408);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
             // 
-            // MassageForm
+            // MessageForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(556, 285);
-            Controls.Add(labelMessage);
-            Name = "MassageForm";
-            Text = "MassageForm";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(724, 432);
+            this.Controls.Add(this.richTextBox1);
+            this.Name = "MessageForm";
+            this.Text = "MassageForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
-
-        private Label labelMessage;
+        private RichTextBox richTextBox1;
     }
 }

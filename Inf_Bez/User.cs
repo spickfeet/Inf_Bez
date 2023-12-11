@@ -23,14 +23,6 @@ namespace Inf_Bez
             Id = id;
         }
 
-        public bool IsCorrectData()
-        {
-            if (string.IsNullOrEmpty(Login)) return false;
-            if (string.IsNullOrEmpty(Password)) return false;
-
-            return true;
-        }
-
         public static string ConvertToHashCode(string password)
         {
             byte[] messageBytes = Encoding.UTF8.GetBytes(password);

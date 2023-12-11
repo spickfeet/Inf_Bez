@@ -30,17 +30,20 @@ namespace Inf_Bez
 
         private void buttonPrintMassage_Click(object sender, EventArgs e)
         {
-            if (comboBoxFileName.SelectedIndex == -1)
+            if (comboBoxFileName.SelectedIndex <= -1)
             {
                 errorProviderFile.SetError(comboBoxFileName, "Выберите файл");
                 return;
             }
-            var massage = JsonConvert.DeserializeObject<MessageContainer>(File.ReadAllText(comboBoxFileName.Text));
-            if (_user.Id.Contains(massage.ID))
+            string filePath = comboBoxFileName.Text + ".json";
+            var message = JsonConvert.DeserializeObject<MessageContainer>(File.ReadAllText(filePath));
+
+            if (_user.Id.Contains(message.ID))
             {
                 errorProviderFile.Clear();
-                MessageForm massageForm = new MessageForm(massage.Message);
-                massageForm.ShowDialog();
+                string? title = comboBoxFileName.Text;
+                MessageForm messageForm = new MessageForm(title, message.Message);
+                messageForm.ShowDialog();
             }
             else
             {

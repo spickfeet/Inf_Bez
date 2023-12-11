@@ -12,10 +12,12 @@ namespace Inf_Bez
 {
     public partial class MessageForm : Form
     {
-        public MessageForm(string massage)
+        public MessageForm(string title, string massage)
         {
             InitializeComponent();
-            labelMessage.Text = massage;
+
+            Text = title;
+            richTextBox1.Text = massage;
         }
     }
 }

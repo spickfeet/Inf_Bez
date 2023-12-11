@@ -10,12 +10,15 @@ namespace Inf_Bez
             [STAThread]
             static void Main()
             {
-                MessageContainer employees = new("\tАлексей Анатольевич\nВозраст: 21 год\nID: 2342342\n\tДмитрий Вадимович\nВозраст: 31 год\nID: 6776823\n\tCергей Викторович\nВозраст: 21 год\nID: 79834387\n", 1);
+                MessageContainer employees = new("\tГЂГ«ГҐГЄГ±ГҐГ© ГЂГ­Г ГІГ®Г«ГјГҐГўГЁГ·\nГ‚Г®Г§Г°Г Г±ГІ: 21 ГЈГ®Г¤\nID: 2342342\n\tГ„Г¬ГЁГІГ°ГЁГ© Г‚Г Г¤ГЁГ¬Г®ГўГЁГ·\nГ‚Г®Г§Г°Г Г±ГІ: 31 ГЈГ®Г¤\nID: 6776823\n\tCГҐГ°ГЈГҐГ© Г‚ГЁГЄГІГ®Г°Г®ГўГЁГ·\nГ‚Г®Г§Г°Г Г±ГІ: 21 ГЈГ®Г¤\nID: 79834387\n", 1);
                 File.WriteAllText("Employees.json", JsonConvert.SerializeObject(employees, Formatting.Indented));
-                MessageContainer subsidiaries = new("\tДочернии компании\nGrinding Gear Games\nRiot Games\nTencent Pictures\nYager Development\nIflix", 2);
+              
+                MessageContainer subsidiaries = new("\tГ„Г®Г·ГҐГ°Г­ГЁГЁ ГЄГ®Г¬ГЇГ Г­ГЁГЁ\nGrinding Gear Games\nRiot Games\nTencent Pictures\nYager Development\nIflix", 2);
                 File.WriteAllText("Subsidiaries.json", JsonConvert.SerializeObject(subsidiaries, Formatting.Indented));
-                MessageContainer revenue = new("\t\tДоход\n\t2019 год\n 1.000.000\n\t2020 год\n 1.500.000\n\t2021 год\n 2.000.000", 3);
-                File.WriteAllText("Revenue.json", JsonConvert.SerializeObject(revenue, Formatting.Indented));          
+              
+                MessageContainer revenue = new("\t\tГ„Г®ГµГ®Г¤\n\t2019 ГЈГ®Г¤\n 1.000.000\n\t2020 ГЈГ®Г¤\n 1.500.000\n\t2021 ГЈГ®Г¤\n 2.000.000", 3);
+                File.WriteAllText("Revenue.json", JsonConvert.SerializeObject(revenue, Formatting.Indented));
+              
                 ApplicationConfiguration.Initialize();
                 Application.Run(new LogInForm());
             }
